@@ -1,16 +1,15 @@
-# shimmer_example
+# Flutter Examples
 
-A new Flutter project.
+Repository containing example cases you might encounter when developing a Flutter app. Sometimes, there are specific use cases that require us to customize Flutter Widgets from existing libraries, etc.
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Flutter application.
+- Make sure you already have Flutter installed.
+- `cd` into the project directory (e.g. `cd shimmer_delay`) and run `flutter pub get`
+- Execute `flutter run` in your terminal
 
-A few resources to get you started if this is your first Flutter project:
+## Example List
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Shimmer with Delay
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="assets/shimmer_delay/shimmer_with_delay.gif">

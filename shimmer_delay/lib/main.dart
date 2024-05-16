@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:shimmer/shimmer.dart';
 import 'package:shimmer_example/periodic_shimmer_widget.dart';
 
 void main() {
@@ -14,12 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Shimmer Delay Example',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Shimmer Delay Example'),
     );
   }
 }
@@ -62,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: DelayingShimmerWidget(
-          tickDuration: const Duration(milliseconds: 500),
+          tickDuration: const Duration(milliseconds: 1500),
           shimmerTicks: 1,
           delayTicks: 2,
           finishTick: 10,
