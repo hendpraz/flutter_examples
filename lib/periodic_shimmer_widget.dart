@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-class PeriodicShimmerWidget extends StatefulWidget {
-  const PeriodicShimmerWidget({
+class DelayingShimmerWidget extends StatefulWidget {
+  const DelayingShimmerWidget({
     super.key,
     required this.tickDuration,
     required this.shimmerTicks,
@@ -22,10 +22,10 @@ class PeriodicShimmerWidget extends StatefulWidget {
   final Widget child;
 
   @override
-  State<PeriodicShimmerWidget> createState() => _PeriodicShimmerWidgetState();
+  State<DelayingShimmerWidget> createState() => _DelayingShimmerWidgetState();
 }
 
-class _PeriodicShimmerWidgetState extends State<PeriodicShimmerWidget> {
+class _DelayingShimmerWidgetState extends State<DelayingShimmerWidget> {
   Timer? timer;
 
   int tick = 0;
@@ -75,6 +75,7 @@ class _PeriodicShimmerWidgetState extends State<PeriodicShimmerWidget> {
           Shimmer.fromColors(
             baseColor: Colors.transparent,
             highlightColor: Colors.white.withOpacity(0.5),
+            period: widget.tickDuration,
             child: widget.child,
           ),
         ],

@@ -61,11 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: PeriodicShimmerWidget(
-          tickDuration: const Duration(milliseconds: 1500),
+        child: DelayingShimmerWidget(
+          tickDuration: const Duration(milliseconds: 500),
           shimmerTicks: 1,
           delayTicks: 2,
-          finishTick: 4,
+          finishTick: 10,
           isStartingWithShimmer: true,
           child: containerWidget,
         ),
