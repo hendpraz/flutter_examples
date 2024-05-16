@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:shimmer/shimmer.dart';
-import 'package:shimmer_example/periodic_widget.dart';
+import 'package:shimmer_example/periodic_shimmer_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,30 +55,19 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
-    final stackingShimmer = Stack(
-      children: [
-        containerWidget,
-        Shimmer.fromColors(
-          baseColor: Colors.transparent,
-          highlightColor: Colors.white.withOpacity(0.5),
-          child: containerWidget,
-        ),
-      ],
-    );
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
       body: Center(
-        child: PeriodicWidget(
-          childEnabled: stackingShimmer,
-          childDisabled: containerWidget,
-          periodicDuration: const Duration(milliseconds: 1500),
-          timesEnablingList: const [0, 3, 6, 9],
-          timesDisablingList: const [1, 4, 7],
-          finishTime: 10,
+        child: PeriodicShimmerWidget(
+          tickDuration: const Duration(milliseconds: 1500),
+          shimmerTicks: 1,
+          delayTicks: 2,
+          finishTick: 4,
+          isStartingWithShimmer: true,
+          child: containerWidget,
         ),
       ),
     );
